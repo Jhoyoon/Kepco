@@ -7,7 +7,7 @@ const morganLogger = morgan("dev");
 const PORT = 3000;
 const initController = () =>{
     console.log(`server listening http://localhost:${PORT}/`);
-    console.log('껄껄');
+    console.log('껄껄ㅇㅇㅇ');
 }
 
 // global middleware. 모든 URL에 적용 됨
