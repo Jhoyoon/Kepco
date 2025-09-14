@@ -1,0 +1,32 @@
+{
+  "name": "use_node",
+  "version": "1.0.0",
+  "description": "use node.js!",
+  "main": "./index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Freedom505/useNode.git"
+  },
+  "author": "hoyoon jung",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Freedom505/useNode/issues"
+  },
+  "homepage": "https://github.com/Freedom505/useNode#readme",
+  "dependencies": {
+    "@salesforce-ux/design-system": "^2.27.1",
+    "express": "^5.1.0",
+    "morgan": "^1.10.0",
+    "pug": "^3.0.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/node": "^7.26.0",
+    "@babel/preset-env": "^7.26.9",
+    "nodemon": "^3.1.10"
+  }
+}

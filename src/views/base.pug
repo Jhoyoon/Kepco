@@ -1,0 +1,21 @@
+doctype html   
+include mixins/video
+html(lane="ko")
+    head   
+        title #{pateTitle}
+    body    
+        header 
+            nav    
+                ul 
+                    if condition
+                        li true  
+                    else
+                        li false
+                    each video in videos
+                        +video(video) 
+                    else
+                        li 배열 빔~
+            h1=pateTitle
+        main
+            block content
+    include partials/footer.pug
