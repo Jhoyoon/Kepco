@@ -1,6 +1,6 @@
 import express from "express";
 import morgan from "morgan";
-import globalRouter  from "./src/Routers/globalRourter.js";
+import globalRouter  from "./Routers/globalRourter.js";
 
 const app = express();
 const morganLogger = morgan("dev");
