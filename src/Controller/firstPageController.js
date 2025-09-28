@@ -16,6 +16,6 @@ export const firstPageController = (req, res,next) => {
     res.render("home",pateTitle);
 }
 export const homeController = (req, res,next) => {
-
+    // 여기서 파라미터를 view에 전달하면 되는구나?
     res.send("<h1>home</h1>");
 }

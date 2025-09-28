@@ -1,6 +1,6 @@
 import express from "express";
-import { firstPageController } from "../Controller/firstPageController.js";
-import { homeController } from "../Controller/firstPageController.js";
+import { firstPageController } from "../controller/firstPageController.js";
+import { homeController } from "../controller/firstPageController.js";
 
 const globalRouter = express.Router();
 globalRouter.get('/',firstPageController);

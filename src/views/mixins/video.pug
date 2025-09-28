@@ -2,5 +2,7 @@ mixin video(video)
     div     
         h1=video.title
             ul 
-                li  #{video.comments}
-                li #{video.createdAt}
+                //- a(href=`/videos/${video.Id}`)=video.title // 절대 url. root url 기준으로 움직임
+                //- a(href=`videos`)=video.title // 상eo url. 현재 위치 기준 url 추가
+                //- li  #{video.comments}
+                //- li #{video.createdAt}
