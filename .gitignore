@@ -1,1 +1,5 @@
-/node_modules
+# Node.js 기본 제외 항목
+node_modules/
+
+# 환경 변수 파일
+.env

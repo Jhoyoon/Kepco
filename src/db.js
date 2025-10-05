@@ -1,11 +1,17 @@
-import mongoose from "mongoose" 
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
 
-mongoose.connect('mongodb+srv://cluster0.4dkqkhr.mongodb.net/" --apiVersion 1 --username junghoyoon505_db_user', {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
-.then(() => console.log("✅ MongoDB connected"))
+.then(() => afterConnected())
 .catch(err => console.error("❌ MongoDB connection error:", err));
+
 const db = mongoose.connection;
-db.on('error',(error) => console.log('Connected to DB',error));
-// db.once('open',() => console.log('두번쨰임'));
+db.on('error', (error) => console.error('❌ DB Error:', error));
+
+function afterConnected() {
+  console.log('✅ Connected to local MongoDB:', mongoose.connection.name);
+}
