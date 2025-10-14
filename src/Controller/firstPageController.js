@@ -2,10 +2,10 @@ import Video from '../models/Video.js';
 
 export const firstPageController = async (req, res,next) => {
     console.log('firstPageController run');
-    const result = (await Video.find({})).sort({createdDate : "asc"}); // 이런식으로 정렬도 가능
-    console.log('result :: '+result);
-    const pateTitle = {pateTitle : "타이틀임",condition : false,videos : []};
-    res.render("home",pateTitle);
+    // const result = (await Video.find({})).sort({createdDate : "asc"}); // 이런식으로 정렬도 가능
+    // console.log('result :: '+result);
+    const param = {pageTitle : "한전오픈 API"};
+    res.render("home",param);
 }
 export const homeController = (req, res,next) => {
     // 여기서 파라미터를 view에 전달하면 되는구나?

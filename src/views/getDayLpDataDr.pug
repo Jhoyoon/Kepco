@@ -1,0 +1,18 @@
+extends base.pug
+
+block content
+    h1=pageTitle
+    div 
+        h1=errorMessage
+        form(method="POST", action="getDayLpDataDr")
+            input(placeholder="고객번호", required, type="text", name="custNo")
+            input(placeholder="일자", required, type="date", name="date")
+            input(placeholder="서비스키" required, type="text" name="serviceKey")
+            button 조회
+        button(name="엑셀 export") 엑셀 export
+
+    if datas.length
+        div    
+            each data in datas
+                h1=data.custNo
+            

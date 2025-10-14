@@ -1,0 +1,47 @@
+header
+    div
+        a(href="/") 홈사진
+    nav    
+        ul 
+            li
+                a(href="/action/getDayLpDataDr") 일단위 전력소비 데이터(DR)
+            li 
+                a(href="/action/getDayLpDataNormal") 일단위 전력소비 데이터(일반)
+            li 
+                a(href="/action/getMinuteLpDataDr") 15분단위 전력소비 데이터(DR)
+            li 
+                a(href="/action/getMinuteLpDataNormal") 15분단위 전력소비 데이터(일반)
+            li 
+                a(href="/action/getCustNoList") 고객번호
+            li 
+                a(href="/action/getCustMeterList") 고객번호, 계기번호
+            li 
+                a(href="/action/getAllCustPeriodData") 전체고객의 전력소비 데이터
+            li 
+                a(href="/action/getPeriodData") 특정고객의 특정시간 전력소비 데이터
+            li 
+                a(href="/action/getCustInfoData") 고객정보
+            li 
+                a(href="/action/getCustBillData") 청구정보
+            li 
+                a(href="/action/getCustJoinInfoData") 고객가입여부확인
+            li 
+                a(href="/action/getKukminDayLpData") 일단위 전력소비 데이터(SG)
+            li 
+                a(href="/action/getKukminMinuteLpData") 15분단위 전력소비 데이터(SG)
+            li 
+                a(href="/action/getPPAGenBizrBasc") PPA 발전사업자 기본정보
+            li 
+                a(href="/action/getPPASmkpUnitCost") PPA 발전 SMP 정산대금정보
+            li 
+                a(href="/action/getPPAGenMrVal") PPA 고객 발전 정기검침내역
+            li 
+                a(href="/action/getPPAGenMinuteLpData") PPA 15분단위 발전량 정보
+            //- if condition
+            //-     li true  
+            //- else
+            //-     li false
+            //- each video in videos
+            //-     +video(video) 
+            //- else
+            //-     li 배열 빔~
