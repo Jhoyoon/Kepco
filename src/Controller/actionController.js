@@ -1,7 +1,7 @@
 const URL = "https://opm.kepco.co.kr"; 
 export const getDayLpDataDr = async (req, res,next) => {
     const param = {pageTitle : "일단위 전력소비 데이터(DR)", url : URL + "/DrAPI/getDayLpDataDr", datas:[]};
-    res.render("getDayLpDataDr",param);
+    res.render("actions/getDayLpDataDr",param);
 }
 export const postDayLpDataDr = async (req, res,next) => {
     let datas = [];
@@ -16,8 +16,8 @@ export const postDayLpDataDr = async (req, res,next) => {
         return res.render("getDayLpDataDr",param);
     }
     datas = responseBody.dayLpDataInfoList;
-    const param = {pageTitle : "일단위 전력소비 데이터(DR)", url : url + "/DrAPI/getDayLpDataDr",isReturn : true,datas};
-    res.render("getDayLpDataDr",param);
+    const param = {pageTitle : "일단위 전력소비 데이터(DR)", url : URL + "/DrAPI/getDayLpDataDr",isReturn : true,datas};
+    res.render("actions/getDayLpDataDr",param);
 }
 
 export const getDayLpDataNormal = async (req, res,next) => {

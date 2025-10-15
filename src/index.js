@@ -6,6 +6,7 @@ import globalRouter  from "./routers/globalRourter.js";
 import userRouter  from "./routers/userRouter.js";
 import actionRouter  from "./routers/actionRouter.js";
 
+
 const app = express();
 const morganLogger = morgan("dev");
 const PORT = 3000;
@@ -18,6 +19,7 @@ app.set("view engine","pug");
 app.set("views",process.cwd()+"/src/views"); // views 파일 경로 지정
 app.use(morganLogger);
 app.use(express.urlencoded({extended : true}));
+// app.use(express.static(path.join(__dirname, 'public')));
 app.use("/", globalRouter);
 app.use("/user", userRouter);
 app.use("/action", actionRouter);
