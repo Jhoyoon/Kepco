@@ -1,4 +1,2 @@
-const hello = () => {
-    alert("hi");
-}
-hello();
+import "../css/style.css"
+alert("hi");
