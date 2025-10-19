@@ -3,3 +3,5 @@ node_modules/
 
 # 환경 변수 파일
 .env
+# webpack에서 변환한 js, css 파일들
+assets/

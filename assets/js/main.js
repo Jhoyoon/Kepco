@@ -7,17 +7,8 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
-
-/***/ "./src/client/css/style.css":
-/*!**********************************!*\
-  !*** ./src/client/css/style.css ***!
-  \**********************************/
-/***/ (() => {
-
-eval("{/* body{\n    background-color: red;\n} */\n\n//# sourceURL=webpack://use_node/./src/client/css/style.css?\n}");
-
-/***/ }),
 
 /***/ "./src/client/js/main.js":
 /*!*******************************!*\
@@ -25,8 +16,17 @@ eval("{/* body{\n    background-color: red;\n} */\n\n//# sourceURL=webpack://use
   \*******************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/style.css */ \"./src/client/css/style.css\");\n\nalert(\"hi\");\n\n//# sourceURL=webpack://use_node/./src/client/js/main.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/style.scss */ \"./src/client/scss/style.scss\");\n\n\n//# sourceURL=webpack://use_node/./src/client/js/main.js?\n}");
+
+/***/ }),
+
+/***/ "./src/client/scss/style.scss":
+/*!************************************!*\
+  !*** ./src/client/scss/style.scss ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://use_node/./src/client/scss/style.scss?\n}");
 
 /***/ })
 

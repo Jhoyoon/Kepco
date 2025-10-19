@@ -1,2 +1,1 @@
-import "../css/style.css"
-alert("hi");
+import "../scss/style.scss";
