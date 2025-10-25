@@ -4,20 +4,62 @@ export const getDayLpDataDr = async (req, res,next) => {
     res.render("actions/getDayLpDataDr",param);
 }
 export const postDayLpDataDr = async (req, res,next) => {
+    console.log('postDayLpDataDr run');
     let datas = [];
     const {custNo,date, serviceKey } = req.body;
     const requestUrl = `${URL}:11080/DrAPI/getDayLpData.do?custNo=${custNo}&date=${date}&serviceKey=${serviceKey}&returnType=02`;
     const response = await fetch(requestUrl, {
         method: "GET"
     });
-    const responseBody = await response.json();
-    if(responseBody.dayLpDataInfoList[0].errMsg){
-        const param = {pageTitle : "일단위 전력소비 데이터(DR)", url : URL + "/DrAPI/getDayLpDataDr",isReturn : true, errorMessage : responseBody.dayLpDataInfoList[0].errMsg,datas};
-        return res.render("getDayLpDataDr",param);
+    if(!response.ok){
+        const param = {pageTitle : "일단위 전력소비 데이터(DR)", url : URL + "/DrAPI/getDayLpDataDr", errorMessage : '한전 오픈 API 서버 에러. 잠시 후 다시 시도해 주세요.',datas,formInput : {custNo,date, serviceKey}};
+        return res.render("actions/getDayLpDataDr",param);
     }
+    const responseBody = await response.json();    
+    // if(responseBody.dayLpDataInfoList[0].errMsg){
+    //     console.log('errMsg :: '+responseBody.dayLpDataInfoList[0].errMsg);
+    //     const param = {pageTitle : "일단위 전력소비 데이터(DR)", url : URL + "/DrAPI/getDayLpDataDr", errorMessage : responseBody.dayLpDataInfoList[0].errMsg,datas,formInput : {custNo,date, serviceKey}};
+    //     return res.render("actions/getDayLpDataDr",param);
+    // }
     datas = responseBody.dayLpDataInfoList;
-    const param = {pageTitle : "일단위 전력소비 데이터(DR)", url : URL + "/DrAPI/getDayLpDataDr",isReturn : true,datas};
-    res.render("actions/getDayLpDataDr",param);
+    // datas = [
+    //     {
+    //         custNo : '123',
+    //         meterNo : '1234556',
+    //         mr_ymd : '2024-05-23',
+    //         multi_meter_yn  : 'Y',
+    //         vld_pwr   : '123',
+    //         pwr_qty0015 : 123.45,
+    //         pwr_qty0030 : 123.45,
+    //         pwr_qty0045 : 123.45,
+    //         pwr_qty0060 : 123.45,
+    //         pwr_qty0075 : 123.45,
+    //         pwr_qty0090 : 123.45,
+    //         pwr_qty0105 : 123.45,
+    //         pwr_qty0120 : 123.45,
+    //         pwr_qty0135 : 123.45,
+    //         pwr_qty0150 : 123.45,
+    //     },
+    //     {
+    //         custNo : '124',
+    //         meterNo : '56',
+    //         mr_ymd : '2024-06-23',
+    //         multi_meter_yn  : 'N',
+    //         vld_pwr   : '546',
+    //         pwr_qty0015 : 124.45,
+    //         pwr_qty0030 : 124.45,
+    //         pwr_qty0045 : 124.45,
+    //         pwr_qty0060 : 123.45,
+    //         pwr_qty0075 : 123.45,
+    //         pwr_qty0090 : 123.45,
+    //         pwr_qty0105 : 123.45,
+    //         pwr_qty0120 : 123.45,
+    //         pwr_qty0135 : 123.45,
+    //         pwr_qty0150 : 123.45,
+    //     },
+    // ]
+    const param = {pageTitle : "일단위 전력소비 데이터(DR)", url : URL + "/DrAPI/getDayLpDataDr",datas};
+    return res.render("actions/getDayLpDataDr",param);
 }
 
 export const getDayLpDataNormal = async (req, res,next) => {

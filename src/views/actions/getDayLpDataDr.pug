@@ -1,18 +1,30 @@
 extends ../base.pug
 
 block content
+    //- api 호출이 기능이 정상적으로 기능하는지 확인해 봐야하고
+    //- 화면에 뿌려주는 테이블을 하나 만들어야 하고
+    //- 그 다음 excel.js로 export하는 기능을 하나 만들어야 한다.
     h1=pageTitle
     div 
         h1=errorMessage
-        form(method="POST", action="getDayLpDataDr")
-            input(placeholder="고객번호", required, type="text", name="custNo")
-            input(placeholder="일자", required, type="date", name="date")
-            input(placeholder="서비스키" required, type="text" name="serviceKey")
-            button(onclick="calloutKepco") 조회
-        button(name="엑셀 export") 엑셀 export
-
+        form#calloutForm(method="POST" action="getDayLpDataDr")
+            input(placeholder="고객번호", required, type="text", name="custNo" value=formInput ? formInput.custNo : "")
+            input(placeholder="일자", required, type="date", name="date" value=formInput ? formInput.date : "")
+            input(placeholder="서비스키" required, type="text" name="serviceKey" value=formInput ? formInput.serviceKey : "")
+            button(id="calloutButton") 조회
+    button#excelExport(name="excelExport") 엑셀 export
+    div#loading
     if datas.length
         div    
             each data in datas
-                h1=data.custNo
-    //- script(src="/script/getDayLpDataDr.js")
+                p custNo #{data.custNo}
+                p meterNo #{data.meterNo}
+                p mr_ymd #{data.mr_ymd}
+                p multi_meter_yn #{data.multi_meter_yn}
+                p vld_pwr #{data.vld_pwr}
+                p pwr_qry0015 #{data.pwr_qty0015}
+                br
+block scripts
+    script(src="/assets/js/getDayLpDataDr.js")
+    script.
+        window.datas =!{JSON.stringify(datas || false)}

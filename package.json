@@ -21,7 +21,9 @@
   "dependencies": {
     "@salesforce-ux/design-system": "^2.27.1",
     "dotenv": "^17.2.3",
+    "exceljs": "^4.4.0",
     "express": "^5.1.0",
+    "file-saver": "^2.0.5",
     "mongoose": "^8.18.2",
     "morgan": "^1.10.0",
     "pug": "^3.0.3"
